@@ -44,6 +44,10 @@ jobs:
         with:
           fetch-depth: 0 # needed by setuptools-scm
 
+      - uses: whywaita/setup-lxd@v1
+        with:
+          lxd_version: latest/stable
+
       - name: Install Python
         uses: actions/setup-python@v4
         with:

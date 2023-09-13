@@ -1,7 +1,0 @@
----
-driver:
-  name: containers
-platforms:
-  - name: instance
-provisioner:
-  name: ansible
