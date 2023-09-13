@@ -10,10 +10,11 @@
       type: image
       mode: pull
       server: https://images.linuxcontainers.org
-      alias: ubuntu/bionic
+      alias: ubuntu/jammy
       protocol: simplestreams
     default_config:
       "security.nesting": "true"
+
 
   tasks:
     - name: Create molecule instance(s)
