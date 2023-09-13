@@ -9,6 +9,7 @@ This repository contains the following molecule plugins:
 - gce
 - podman
 - vagrant
+- lxd
 
 
 Installing `molecule-plugins` does not install dependencies specific to each,
