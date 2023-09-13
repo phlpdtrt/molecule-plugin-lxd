@@ -124,7 +124,7 @@ parametrize-values-type = "tuple"
 known-first-party = ["molecule_plugins"]
 
 [project.entry-points."molecule.driver"]
-lxd = "molecule_plugins.azure.driver:LXD"
+lxd = "molecule_plugins.lxd.driver:LXD"
 
 [tool.setuptools_scm]
 local_scheme = "no-local-version"
