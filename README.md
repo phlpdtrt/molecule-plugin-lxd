@@ -3,4 +3,3 @@
 # molecule-plugin-lxd
 
 This repository contains the lxd molecule plugin
-
