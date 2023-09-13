@@ -21,8 +21,8 @@
 """Functional tests"""
 import pathlib
 
-from molecule.util import run_command
 from molecule.test.conftest import change_dir_to
+from molecule.util import run_command
 
 
 def test_command_init_scenario(tmp_path: pathlib.Path):

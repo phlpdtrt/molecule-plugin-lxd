@@ -15,7 +15,6 @@
     default_config:
       "security.nesting": "true"
 
-
   tasks:
     - name: Create molecule instance(s)
       community.general.lxd_container:
