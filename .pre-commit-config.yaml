@@ -5,7 +5,7 @@ ci:
     - ansible-lint
 exclude: >
   (?x)^(
-    src/molecule_plugins/_version.py
+    src/molecule_plugin_lxd/_version.py
   )$
 default_language_version:
   python: python3
