@@ -10,11 +10,11 @@ build-backend = "setuptools.build_meta"
 # https://peps.python.org/pep-0621/#readme
 requires-python = ">=3.9"
 dynamic = ["version"]
-name = "molecule-plugins"
-description = "Molecule Plugins"
+name = "molecule-plugin-lxd"
+description = "Molecule LXD Plugin"
 readme = "README.md"
-authors = [{ "name" = "Sorin Sbarnea", "email" = "sorin.sbarnea@gmail.com" }]
-maintainers = [{ "name" = "Sorin Sbarnea", "email" = "sorin.sbarnea@gmail.com" }]
+authors = [{ "name" = "Philipp Dittert", "email" = "philipp.dittert@gmail.com" }]
+maintainers = [{ "name" = "Philipp Dittert", "email" = "philipp.dittert@gmail.com" }]
 license = { text = "MIT" }
 classifiers = [
   "Development Status :: 5 - Production/Stable",
@@ -43,10 +43,10 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/ansible-community/molecule-plugins"
+homepage = "https://github.com/phlpdtrt/molecule-plugin-lxd"
 documentation = "https://molecule.readthedocs.io/"
-repository = "https://github.com/ansible-community/molecule-plugins"
-changelog = "https://github.com/ansible-community/molecule-plugins/releases"
+repository = "https://github.com/phlpdtrt/molecule-plugin-lxd"
+changelog = "https://github.com/phlpdtrt/molecule-plugin-lxd/releases"
 
 [project.optional-dependencies]
 test = [

@@ -14,7 +14,7 @@ for DRIVER_NAME in "${DRIVER_NAMES[@]}"; do
   ansible localhost -o -m lineinfile -a 'path=meta/main.yml line="  namespace: roles" insertafter="  author: your name"'
   molecule init scenario --driver-name="${DRIVER_NAME}"
   sed \
-	-e 's!author:.*!author: molecule-plugins!g' \
+	-e 's!author:.*!author: molecule-plugin-lxd!g' \
   -e 's!namespace:.*!namespace: roles!g' \
 	-e 's!company:.*!company: ansible-community!g' \
 	-e 's!min_ansible_version:.*!min_ansible_version: "2.1"!g' \
