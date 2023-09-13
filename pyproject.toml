@@ -51,7 +51,7 @@ changelog = "https://github.com/phlpdtrt/molecule-plugin-lxd/releases"
 [project.optional-dependencies]
 test = [
     "pytest-helpers-namespace >= 2019.1.8",
-    "molecule[test] >= 6.0.0a1"
+    "molecule[test] >= 6.0"
 ]
 azure = []
 docker = [
