@@ -17,6 +17,7 @@
 #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 #  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #  DEALINGS IN THE SOFTWARE.
+
 import os
 
 from molecule import logger
@@ -84,6 +85,7 @@ class LXD(Driver):
     def __init__(self, config=None):
         super().__init__(config)
         self._name = "lxd"
+        self._sanity_passed = False
 
     @property
     def name(self):
@@ -115,8 +117,20 @@ class LXD(Driver):
         }
 
     def sanity_checks(self):
-        # FIX(decentral1se): Implement sanity checks
-        pass
+        if self._sanity_passed:
+            return
+
+        log.info("Sanity checks: '%s'", self._name)
+
+        runtime = Runtime()
+        if runtime.version < Version("2.10.0"):
+            warnings.warn(
+                f"Use of molecule-plugin-lxd with Ansible {runtime.version} is "
+                "unsupported, upgrade to Ansible 2.11 or newer. "
+                "Do not raise any bugs if your tests are failing with current configuration.",
+                category=MoleculeRuntimeWarning,
+            )
+        self._sanity_passed = True
 
     def template_dir(self):
         """Return path to its own cookiecutterm templates. It is used by init
