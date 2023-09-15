@@ -24,7 +24,7 @@ import warnings
 from ansible_compat.runtime import Runtime
 from packaging.version import Version
 
-from molecule import logger, util
+from molecule import logger
 from molecule.api import Driver, MoleculeRuntimeWarning
 
 log = logger.get_logger(__name__)
