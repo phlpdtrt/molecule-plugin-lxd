@@ -19,11 +19,15 @@
 #  DEALINGS IN THE SOFTWARE.
 
 import os
+import warnings
 
-from molecule import logger
-from molecule.api import Driver
+from ansible_compat.runtime import Runtime
+from packaging.version import Version
 
-LOG = logger.get_logger(__name__)
+from molecule import logger, util
+from molecule.api import Driver, MoleculeRuntimeWarning
+
+log = logger.get_logger(__name__)
 
 
 class LXD(Driver):
