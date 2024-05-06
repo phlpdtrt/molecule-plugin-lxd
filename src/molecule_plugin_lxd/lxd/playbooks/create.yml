@@ -9,7 +9,7 @@
     default_source:
       type: image
       mode: pull
-      server: https://images.linuxcontainers.org
+      server: https://images.lxd.canonical.com
       alias: ubuntu/jammy
       protocol: simplestreams
     default_config:
