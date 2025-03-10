@@ -128,12 +128,12 @@ line-length = 88
 parametrize-values-type = "tuple"
 
 [tool.ruff.lint.isort]
-known-first-party = ["molecule_plugins"]
+known-first-party = ["molecule_plugin_lxd"]
 
 [project.entry-points."molecule.driver"]
-lxd = "molecule_plugins.lxd.driver:LXD"
+lxd = "molecule_plugin_lxd.lxd.driver:LXD"
 
 
 [tool.setuptools_scm]
 local_scheme = "no-local-version"
-write_to = "src/molecule_plugins/_version.py"
+write_to = "src/molecule_plugin_lxd/_version.py"
