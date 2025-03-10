@@ -1,3 +1,4 @@
+---
 name: release
 
 on:
@@ -8,9 +9,9 @@ jobs:
   pypi:
     name: Publish to PyPI registry
     environment: release
+    runs-on: ubuntu-22.04
     permissions:
       id-token: write
-    runs-on: ubuntu-22.04
 
     env:
       FORCE_COLOR: 1
@@ -18,10 +19,10 @@ jobs:
       TOX_PARALLEL_NO_SPINNER: 1
 
     steps:
-      - name: Switch to using Python 3.9 by default
-        uses: actions/setup-python@v4
+      - name: Switch to using Python 3.10 by default
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: "3.10"
 
       - name: Install tox
         run: >-
@@ -31,7 +32,7 @@ jobs:
           tox
 
       - name: Check out src from Git
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # needed by setuptools-scm
 
