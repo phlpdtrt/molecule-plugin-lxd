@@ -8,13 +8,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 # https://peps.python.org/pep-0621/#readme
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dynamic = ["version"]
-name = "molecule-plugin-lxd"
-description = "Molecule LXD Plugin"
+name = "molecule-plugins"
+description = "Molecule Plugins"
 readme = "README.md"
-authors = [{ "name" = "Philipp Dittert", "email" = "philipp.dittert@gmail.com" }]
-maintainers = [{ "name" = "Philipp Dittert", "email" = "philipp.dittert@gmail.com" }]
+authors = [{ "name" = "Sorin Sbarnea", "email" = "sorin.sbarnea@gmail.com" }]
+maintainers = [{ "name" = "Sorin Sbarnea", "email" = "sorin.sbarnea@gmail.com" }]
 license = { text = "MIT" }
 classifiers = [
   "Development Status :: 5 - Production/Stable",
@@ -26,9 +26,9 @@ classifiers = [
   "Operating System :: MacOS",
   "Operating System :: POSIX",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python",
   "Topic :: System :: Systems Administration",
@@ -39,19 +39,19 @@ classifiers = [
 keywords = ["ansible", "testing", "molecule", "plugin"]
 dependencies = [
     # molecule plugins are not allowed to mention Ansible as a direct dependency
-    "molecule >= 6.0.0a1",
+    "molecule >= 25.1.0",
 ]
 
 [project.urls]
-homepage = "https://github.com/phlpdtrt/molecule-plugin-lxd"
+homepage = "https://github.com/ansible-community/molecule-plugins"
 documentation = "https://molecule.readthedocs.io/"
-repository = "https://github.com/phlpdtrt/molecule-plugin-lxd"
-changelog = "https://github.com/phlpdtrt/molecule-plugin-lxd/releases"
+repository = "https://github.com/ansible-community/molecule-plugins"
+changelog = "https://github.com/ansible-community/molecule-plugins/releases"
 
 [project.optional-dependencies]
 test = [
     "pytest-helpers-namespace >= 2019.1.8",
-    "molecule[test] >= 6.0"
+    "molecule[test] >= 25.1.0"
 ]
 azure = []
 docker = [
@@ -65,7 +65,10 @@ docker = [
     "requests"  # also required by docker
 ]
 ec2 = []
-gce = []
+gce = [
+    "requests >= 2.31.0",
+    "google-auth >= 2.28.2",
+]
 podman = [
 ]
 selinux = [
@@ -80,9 +83,12 @@ selinux = [
 vagrant = [
     "python-vagrant",
 ]
+openstack = [
+    "openstacksdk >= 1.1.0"
+]
 
 [tool.ruff]
-ignore = [
+lint.ignore = [
   "E501", # we use black
   # we deliberately ignore these:
   "EM102",
@@ -94,6 +100,7 @@ ignore = [
   "B028",
   "BLE",
   "C901",
+  "COM812",
   "D",
   "DTZ",
   "FBT",
@@ -112,20 +119,21 @@ ignore = [
   "FIX002",
   "TRY",
 ]
-select = ["ALL"]
+lint.select = ["ALL"]
 target-version = "py39"
 # Same as Black.
 line-length = 88
 
-[tool.ruff.flake8-pytest-style]
+[tool.ruff.lint.flake8-pytest-style]
 parametrize-values-type = "tuple"
 
-[tool.ruff.isort]
-known-first-party = ["molecule_plugin_lxd"]
+[tool.ruff.lint.isort]
+known-first-party = ["molecule_plugins"]
 
 [project.entry-points."molecule.driver"]
-lxd = "molecule_plugin_lxd.lxd.driver:LXD"
+lxd = "molecule_plugins.lxd.driver:LXD"
+
 
 [tool.setuptools_scm]
 local_scheme = "no-local-version"
-write_to = "src/molecule_plugin_lxd/_version.py"
+write_to = "src/molecule_plugins/_version.py"

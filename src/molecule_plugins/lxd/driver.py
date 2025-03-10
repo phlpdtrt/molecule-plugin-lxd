@@ -22,10 +22,9 @@ import os
 import warnings
 
 from ansible_compat.runtime import Runtime
-from packaging.version import Version
-
 from molecule import logger
 from molecule.api import Driver, MoleculeRuntimeWarning
+from packaging.version import Version
 
 log = logger.get_logger(__name__)
 
@@ -105,7 +104,7 @@ class LXD(Driver):
 
     @property
     def default_safe_files(self):
-        return []
+        return [self.instance_config]
 
     @property
     def default_ssh_connection_options(self):
