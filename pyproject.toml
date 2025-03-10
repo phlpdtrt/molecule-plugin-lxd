@@ -13,8 +13,8 @@ dynamic = ["version"]
 name = "molecule-plugin-lxd"
 description = "Molecule LXD Plugin"
 readme = "README.md"
-authors = [{ "name" = "Sorin Sbarnea", "email" = "sorin.sbarnea@gmail.com" }]
-maintainers = [{ "name" = "Sorin Sbarnea", "email" = "sorin.sbarnea@gmail.com" }]
+authors = [{ "name" = "Philipp Dittert", "email" = "philipp.dittert@gmail.com" }]
+maintainers = [{ "name" = "Philipp Dittert", "email" = "philipp.dittert@gmail.com" }]
 license = { text = "MIT" }
 classifiers = [
   "Development Status :: 5 - Production/Stable",
