@@ -36,4 +36,3 @@ provisioner:
 verifier:
   name: ansible
 ```
-
